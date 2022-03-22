@@ -10,8 +10,11 @@
   },
   "description": "dumpsterfire design system's development environment.",
   "devDependencies": {
+    "@roxi/routify": "^2.18.5",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@tsconfig/svelte": "^2.0.1",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.7",
     "svelte-preprocess": "^4.9.8",
@@ -36,10 +39,17 @@
     "url": "git+https://github.com/z00rat/dumpsterfire.git"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "cross-env NODE_ENV=production run-s build:*",
+    "build:routify": "routify -b",
+    "build:vite": "vite build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "dev": "vite",
-    "preview": "vite preview"
+    "dev": "run-p dev:*",
+    "dev:routify": "routify",
+    "dev:vite": "vite --host",
+    "serve": "run-p serve:*",
+    "serve:spa": "spassr",
+    "serve:ssr": "spassr --ssr --port 8889",
+    "serve:vite": "vite preview"
   },
   "type": "module",
   "version": "0.0.0"
