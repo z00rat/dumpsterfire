@@ -6,4 +6,5 @@
 <Router {routes} />
 
 <style global>
+  @import "./global.css";
 </style>
