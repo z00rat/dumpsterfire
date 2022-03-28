@@ -1,6 +1,6 @@
 const isDev = process.env.isDev === "true";
 const isProduction = !isDev;
-console.log("[routify.config.js] isDev: " + isDev + "\n");
+// console.log("[routify.config.js] isDev: " + isDev + "\n");
 
 // https://www.routify.dev/docs/config/build
 module.exports = {
