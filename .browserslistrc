@@ -1,0 +1,7 @@
+# https://github.com/browserslist/browserslist#full-list
+defaults
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+maintained node versions
