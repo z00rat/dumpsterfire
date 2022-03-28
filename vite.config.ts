@@ -4,7 +4,9 @@ import Inspect from "vite-plugin-inspect";
 
 const isDev = process.env.isDev === "true";
 const isProduction = !isDev;
-console.log("isDev: " + isDev + "\n");
+console.log("[vite.config.ts] isDev: " + isDev + "\n");
+
+const assetsDir = "-";
 
 // https://vitejs.dev/config/
 /**
@@ -67,17 +69,23 @@ export default defineConfig({
     // target: "modules",
     // polyfillModulePreload: true,
     outDir: "dist",
-    assetsDir: "----",
+    assetsDir: assetsDir,
     assetsInlineLimit: 4096,
     // cssCodeSplit: true,
     // cssTarget: // the same as build.target
     sourcemap: isDev,
     rollupOptions: {
       // https://rollupjs.org/guide/en/#big-list-of-options
-      // output: {
-      //   banner: "/* source code: https://github.com/z00rat/dumpsterfire/tree/dev */",
-      //   footer: "/* follow me on Twitter! @ratfromthezoo */",
-      // },
+      output: {
+        // banner: "/* source code: https://github.com/z00rat/dumpsterfire/tree/dev */",
+        // footer: "/* follow me on Twitter! @ratfromthezoo */",
+        assetFileNames: (assetInfo) => {
+          const extType = assetInfo.name.split(".")[1];
+          return assetsDir + `/${extType}/[name]-[hash][extname]`;
+        },
+        chunkFileNames: assetsDir + "/js/[name]-[hash].js",
+        entryFileNames: assetsDir + "/[name]-[hash].js",
+      },
       treeshake: true,
     },
     // commonjsOptions: {}, // https://github.com/rollup/plugins/tree/master/packages/commonjs
