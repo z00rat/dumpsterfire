@@ -1,0 +1,32 @@
+{
+  "author": {
+    "email": "zoorat@tutanota.com",
+    "name": "zoorat",
+    "url": "https://github.com/z00rat"
+  },
+  "bugs": {
+    "email": "zoorat@tutanota.com",
+    "url": "https://github.com/z00rat/dumpsterfire/issues"
+  },
+  "description": "dumpsterfire design system's lab.",
+  "homepage": "https://github.com/z00rat/dumpsterfire/tree/lab#readme",
+  "keywords": [
+    "design system",
+    "component",
+    "components",
+    "svelte",
+    "routify"
+  ],
+  "license": "Apache-2.0",
+  "main": "./index.js",
+  "name": "dumpsterfire-lab",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z00rat/dumpsterfire.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.0"
+}
