@@ -20,11 +20,11 @@ COMMAND "git worktree prune"
 git worktree prune
 COMMAND "git worktree add ./dev dev"
 git worktree add ./dev dev
-COMMAND "git worktree add ./releases releases"
-git worktree add ./releases releases
+COMMAND "git worktree add ./shipyard shipyard"
+git worktree add ./shipyard shipyard
 COMMAND "git worktree add ./lab lab"
 git worktree add ./lab lab
-# remove those folders `trash dev lab releases && git worktree prune`
+# remove those folders `trash dev lab shipyard && git worktree prune`
 
 NEWLINE
 LOG "Worktree now:"
